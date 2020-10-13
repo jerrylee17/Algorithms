@@ -4,7 +4,7 @@ import sys
 
 
 def generateRandomArray():
-    arr = np.random.random_integers(1, 10_000_000, 100_000)
+    arr = np.random.random_integers(1, 10_000_000, 200_000)
     arr = arr.tolist()
     return arr
 
@@ -47,6 +47,7 @@ iterativeArray = a.copy()
 recursiveArray = a.copy()
 sortArray = a.copy()
 sortedArray = a.copy()
+numpyArray = np.array(a)
 timestaken = []
 
 # Iterative merge sort
@@ -84,6 +85,14 @@ timestaken.append(("Built in sorted", timetaken))
 print("Built in sorted functions sort:", timetaken)
 sys.stdout.flush()
 # print(newArr)
+
+# Numpy sort
+start_time = time.time()
+np.sort(numpyArray)
+timetaken = time.time() - start_time
+timestaken.append(("Numpy sort", timetaken))
+print("Numpy sort:", timetaken)
+sys.stdout.flush()
 
 timestaken.sort(key=lambda x: x[1])
 timestaken = [t[0] for t in timestaken]
