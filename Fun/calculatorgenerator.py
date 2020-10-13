@@ -1,20 +1,20 @@
 def generateStatement(x, y, op):
     s = f'if op == \'{op}\':\n'
     if op == '+':
-        s += f'\tif x == {x} and y == {y}:\n'
-        s += f'\t\tprint(f\'The sum is: {x+y}\')\n'
+        s += f'    if x == {x} and y == {y}:\n'
+        s += f'        print(f\'The sum is: {x+y}\')\n'
     elif op == '-':
-        s += f'\tif x == {x} and y == {y}:\n'
-        s += f'\t\tprint(f\'The difference is: {x-y}\')\n'
+        s += f'    if x == {x} and y == {y}:\n'
+        s += f'        print(f\'The difference is: {x-y}\')\n'
     elif op == '*':
-        s += f'\tif x == {x} and y == {y}:\n'
-        s += f'\t\tprint(f\'The product is: {x*y}\')\n'
+        s += f'    if x == {x} and y == {y}:\n'
+        s += f'        print(f\'The product is: {x*y}\')\n'
     elif op == '/':
-        s += f'\tif x == {x} and y == {y}:\n'
+        s += f'    if x == {x} and y == {y}:\n'
         if y == 0:
-            s += f'\t\tprint("Cannot divide by 0")\n'
+            s += f'        print("Cannot divide by 0")\n'
         else:
-            s += f'\t\tprint(f\'The quotient is {x/y}\')\n'
+            s += f'        print(f\'The quotient is {x/y}\')\n'
     return s
 
 
