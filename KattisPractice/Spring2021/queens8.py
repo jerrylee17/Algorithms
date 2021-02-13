@@ -2,13 +2,14 @@
 queenCoords = []
 for x in range(8):
     row = input()
-    y = row.find('*')
-    queenCoords.append((x, y))
+    for y, e in enumerate(row):
+        if e == '*':
+            queenCoords.append((x, y))
 
 def solve(qc):
-    if len(qc) > 8:
-        print('invalid')
-        return
+    # if len(qc) > 8:
+    #     print('invalid')
+    #     return
     for i in range(len(qc)):
         for j in range(i+1, len(qc)):
             # same row
