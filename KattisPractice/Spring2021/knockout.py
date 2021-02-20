@@ -1,6 +1,11 @@
 import math
 tc = int(input())
-
+'''
+3 1
+4 2
+4: 2/3
+2: 1/3
+'''
 class TreeNode:
     def __init__(self, val, level):
         if val == 0:
