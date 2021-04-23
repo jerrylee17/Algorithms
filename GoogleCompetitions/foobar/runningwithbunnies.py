@@ -8,7 +8,6 @@ def solution(times, times_limit):
             updated = False
             for i in range(len(times)):
                 for j in range(len(times)):
-                    # dist[j] = min(dist[i] + times[i][j], dist[j])
                     if dist[i] != float('inf') and dist[i] + times[i][j] < dist[j]:
                         dist[j] = dist[i] + times[i][j]
                         updated = True
@@ -18,7 +17,6 @@ def solution(times, times_limit):
         # Negative cycle detection
         for i in range(len(times)):
             for j in range(len(times)):
-                # if dist[i] + times[i][j] < dist[j]:
                 if dist[i] != float('inf') and dist[i] + times[i][j] < dist[j]:
                     return True, [x for x in range(len(times) - 2)]
         return False, dist
